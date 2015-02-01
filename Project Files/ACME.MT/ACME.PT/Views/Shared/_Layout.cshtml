@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+		<link rel="shortcut icon" type="image/ico" href="http://www.sprymedia.co.uk/media/images/favicon.ico">
+		<title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery")
+
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/themes/base/demos.css")"  media ="all"/>
+        <link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/css")" rel="stylesheet" type="text/css" />
+        <link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/themes/base/css")" rel="stylesheet" type="text/css" />
+        
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/themes/base/jquery-ui.css")" media ="all"/>
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/themes/base/jquery.ui.autocomplete.css")"  media ="all"/>
+        
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/DataTable/themes/base/jquery-ui.css")" media ="all"/>
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/DataTable/themes/smoothness/jquery-ui-1.7.2.custom.css")" media ="all"/>
+
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Plugins/DataTables-1.9.1/media/css/demo_page.css")" />
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Plugins/DataTables-1.9.1/media/css/demo_table.css")" />
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Plugins/DataTables-1.9.1/extras/TableTools/media/css/TableTools.css")" />
+               
+		<script type="text/javascript" charset="utf-8" src="~/Plugins/DataTables-1.9.1/media/js/jquery.js"></script>
+		<script type="text/javascript" charset="utf-8" src="~/Plugins/DataTables-1.9.1/media/js/jquery.dataTables.js"></script>
+		<script type="text/javascript" charset="utf-8" src="~/Plugins/DataTables-1.9.1/extras/TableTools/media/js/ZeroClipboard.js"></script>
+		<script type="text/javascript" charset="utf-8" src="~/Plugins/DataTables-1.9.1/extras/TableTools/media/js/TableTools.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="~/Scripts/jquery-ui-1.8.20.js"></script>
+        <script type="text/javascript" charset="utf-8" src="~/Scripts/jquery-ui-1.8.20.min.js"></script>
+        
+        <script type="text/javascript" charset="utf-8" src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+        <script type="text/javascript" charset="utf-8" src="~/Scripts/jquery.validate.js"></script>
+        <script type="text/javascript" charset="utf-8" src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+		
+  
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("Marketing System", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Manage Tweets", "ManageTweets", "Marketing")</li>                           
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

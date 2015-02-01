@@ -1,0 +1,7 @@
+C:\Users\ZEESHAN\Documents\Visual Studio 2012\Projects\ACME.MT\ACME.MT\bin\Debug\ACME.MT.dll
+C:\Users\ZEESHAN\Documents\Visual Studio 2012\Projects\ACME.MT\ACME.MT\bin\Debug\ACME.MT.pdb
+C:\Users\ZEESHAN\Documents\Visual Studio 2012\Projects\ACME.MT\ACME.MT\obj\Debug\ACME.MT.csprojResolveAssemblyReference.cache
+C:\Users\ZEESHAN\Documents\Visual Studio 2012\Projects\ACME.MT\ACME.MT\obj\Debug\ACME.MT.dll
+C:\Users\ZEESHAN\Documents\Visual Studio 2012\Projects\ACME.MT\ACME.MT\obj\Debug\ACME.MT.pdb
+C:\Users\ZEESHAN\Documents\Visual Studio 2012\Projects\ACME.MT\ACME.MT\bin\Debug\EntityFramework.dll
+C:\Users\ZEESHAN\Documents\Visual Studio 2012\Projects\ACME.MT\ACME.MT\bin\Debug\EntityFramework.xml

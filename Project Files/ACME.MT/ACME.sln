@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.MT", "ACME.MT\ACME.MT.csproj", "{68772380-E585-4D2A-8FBC-55C9C207BFBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.PT", "ACME.PT\ACME.PT.csproj", "{BD005BE9-BDAB-4590-A1DC-0EE3C8C7EB40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68772380-E585-4D2A-8FBC-55C9C207BFBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68772380-E585-4D2A-8FBC-55C9C207BFBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68772380-E585-4D2A-8FBC-55C9C207BFBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68772380-E585-4D2A-8FBC-55C9C207BFBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD005BE9-BDAB-4590-A1DC-0EE3C8C7EB40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD005BE9-BDAB-4590-A1DC-0EE3C8C7EB40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD005BE9-BDAB-4590-A1DC-0EE3C8C7EB40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD005BE9-BDAB-4590-A1DC-0EE3C8C7EB40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,43 @@
+﻿@model ACME.MT.BusinessEntities.Marketing.TweetsModel
+@{
+    ViewBag.Title = "_TweetDetails";
+    Layout = "";
+}
+
+
+@using (Html.BeginForm()) {
+    
+         <script type="text/javascript">
+             $(document).ready(function () {
+
+             });
+
+             </script>
+    
+     @Html.ValidationSummary()
+
+    <hr />
+<div>
+        <table class="display"> 
+            <thead>
+                <tr>
+                    <th>UserName    .</th>                    
+                    <th>Date    .</th> 
+                    <th>Location    .</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var mod in Model.TweetsList)
+                {
+                    <tr>
+                        <td>@mod.UserName</td>
+                        <td>@mod.Date.ToLongDateString()</td>
+                        <td>@mod.Location</td>
+                    </tr> 
+                }
+            </tbody>
+        </table>
+    </div>
+        <hr style="color:dimgrey"/>
+    
+}

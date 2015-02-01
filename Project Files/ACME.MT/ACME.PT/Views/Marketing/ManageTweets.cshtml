@@ -1,0 +1,112 @@
+﻿@model ACME.MT.BusinessEntities.Marketing.TweetsModel
+
+@{
+    ViewBag.Title = "ManageTweets";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm()) {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var oTable = $('#dtTweets').dataTable({
+                bFilter: false,
+                bInfo: false,
+                bPaginate: false,
+                bSortable: false,
+
+            });
+
+            //Hierarical Grid
+            $('#dtTweets tbody td img').click
+              (
+                  function () {
+                      var nTr = this.parentNode.parentNode;
+                      if (this.src.match('details_close')) {
+                          /* This row is already open - close it */
+                          this.src = "/Images/details_open.png";
+                          oTable.fnClose(nTr);
+                      }
+                      else {
+                          /* Open this row */
+                          this.src = "/Images/details_close.png";
+                          var keyId = $(this).attr("rel");
+                          $.get("_TweetDetails?keyId=" + keyId,
+                                function (data) {
+                                    var rowOpened = oTable.fnOpen(nTr, data, 'details');
+                                }
+                               );
+                      }
+                  }
+              ); // hierarical grid ends here
+
+
+        });
+    </script>
+    
+   <div>
+     <div>
+    <style type="text/css">
+    .spacing {width:200px;}
+    </style>
+     </div>
+    @Html.ValidationSummary()
+               
+       <hr />
+       <img src="/Images/acmeIMG.png" /> 
+       <hr />
+    
+       <div style="font-size:xx-large; font-weight:bolder; background-color:dimgrey ; color:white; text-align:center; font-family:Cambria">
+        SAVED TWEETS 
+       </div>
+       <hr />
+       <div>
+        <table id="dtTweets" class="display">
+            <thead>
+                <tr>
+                    <th>Details</th>
+                    <th>Id   .</th>
+                    <th>UserId    .</th>
+                    <th>Date    .</th>    
+                    <th>Tweets    .</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var mod in Model.TweetsList)
+                {
+                    <tr>
+                        <td>
+                            <img src="/Images/details_open.png" rel="@mod.KeyId" alt="expand/collapse"/>
+                        </td>
+                        <td>@mod.KeyId</td>
+                        <td>@mod.UserId</td>
+                        <td>@mod.Date.ToShortDateString()</td>
+                        <td>@mod.Tweet</td>     
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+       <hr />
+       <div style="font-size:small; font-weight:bolder; background-color:cadetblue ; color:white; text-align:center; font-family:Arial">
+        Saving Tweet Manually 
+    </div>
+    <hr  style="color:white"/>
+<div>
+      ID : @Html.TextBoxFor(m => m.UserId)
+      Name : @Html.TextBoxFor(m => m.UserName)
+</div>
+       <hr  style="color:white"/>
+<div>
+      tweet :
+</div>
+
+<div>
+     @Html.TextAreaFor(m => m.Tweet, new { @placeholder = "Write text here"}) 
+</div>
+        <hr  style="color:white"/>
+<div>    
+    <input type="submit" id="btnTweet" value="Save" />
+</div>
+<hr />
+    </div>
+    
+}
